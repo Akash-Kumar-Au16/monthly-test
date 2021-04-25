@@ -1,0 +1,71 @@
+Answer 1: b (<ol type="a")
+
+Answer 2: d (<!Doctype html>)
+
+Answer 3: a (#id)
+
+Answer 4: c (Static)
+
+Answer 5: d (e.StopPropogation)
+
+Answer 6:
+
+Closures:
+
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+function makeFunc() {
+  var name = 'Mozilla';
+  function displayName() {
+    alert(name);
+  }
+  return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+
+
+Hoisting:
+
+Hoisting is a term you will not find used in any normative specification prose prior to ECMAScript® 2015 Language Specification. Hoisting was thought up as a general way of thinking about how execution contexts (specifically the creation and execution phases) work in JavaScript. However, the concept can be a little confusing at first.
+
+Conceptually, for example, a strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code.
+
+console.log(num); // Returns undefined, as only declaration was hoisted, no initialization has happened at this stage
+var num; // Declaration
+num = 6; // Initialization
+
+currying:
+Currying is an advanced technique of working with functions. It’s used not only in JavaScript, but in other languages as well.
+
+Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
+
+function curry(f) { // curry(f) does the currying transform
+  return function(a) {
+    return function(b) {
+      return f(a, b);
+    };
+  };
+}
+
+// usage
+function sum(a, b) {
+  return a + b;
+}
+
+let curriedSum = curry(sum);
+
+alert( curriedSum(1)(2) ); // 3
+
+
+
+Answer 9
+
+Output 
+1
+4
+3
+
+At stage one once new promise is on the way it will console 1 and will wait for the success and after success it will wait for the response to send back
+and mean time it will console 4 and once response received at server end it will console 3
